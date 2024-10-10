@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".StatisticsActivity">
+
+    <!-- 상단 통계 화면 텍스트 -->
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="통계"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="9px"
+        android:background="#3C000000"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="1dp"
+        tools:context=".StatisticsActivity"
+        >
+
+        <!-- TabLayout (한주, 한달, 전체) -->
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tabIndicatorColor="@color/black"
+            app:tabSelectedTextColor="@color/black"
+            app:tabTextColor="@color/black" />
+
+        <!-- LineChart 자리 (그래프) -->
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/lineChart"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            app:layout_constraintTop_toBottomOf="@id/tabLayout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="미래 건강 예측"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_marginTop="10dp"
+            android:textColor="#000000" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="9px"
+            android:background="#3C000000"
+            />
+
+        <!-- 예측 텍스트 -->
+        <TextView
+            android:id="@+id/tvPrediction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="현재는 정상이며 앞으로 50% 고혈압 위험입니다."
+            android:layout_marginTop="16dp"
+            android:textSize="16sp"
+            android:textColor="#000000" />
+
+
+    </LinearLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
